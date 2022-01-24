@@ -1,0 +1,6 @@
+name: Parkour
+version: '${project.version}'
+main: me.hdcookie.plugin.parkour.Parkour
+api-version: 1.18
+authors: [ HDcookie ]
+description: Parkour Plugin
