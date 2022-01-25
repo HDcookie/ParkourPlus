@@ -19,10 +19,12 @@ public final class Parkour extends JavaPlugin {
 
 
 
+
         //Checks to see if the player is in the right place
         Bukkit.getPluginManager().registerEvents(new PosChecker(), this);
 
         System.out.println(getCheckpointfile().getString("test"));
+        System.out.println(getConfig().getString("test"));
 
     }
 
