@@ -12,7 +12,7 @@ public class Checkpoints {
         String name = "checkpoints.yml";
 
         File file = new File(Parkour.getMainInstance().getDataFolder(), name);
-        Parkour.getMainInstance().saveResource(name, false);
+        Parkour.getMainInstance().saveResource(name, true);
 
         finalFile = YamlConfiguration.loadConfiguration(file);
 

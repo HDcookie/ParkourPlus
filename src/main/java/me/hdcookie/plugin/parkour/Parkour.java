@@ -15,7 +15,10 @@ public final class Parkour extends JavaPlugin {
         getConfig().options().copyDefaults();
         saveDefaultConfig();
         mainInstance = this;
+        checkpoints = new Checkpoints();
         checkpoints.initiateFile();
+
+
 
 
 
@@ -23,7 +26,7 @@ public final class Parkour extends JavaPlugin {
         //Checks to see if the player is in the right place
         Bukkit.getPluginManager().registerEvents(new PosChecker(), this);
 
-        System.out.println(getCheckpointfile().getString("test"));
+        System.out.println(getCheckpointFile().getString("test"));
         System.out.println(getConfig().getString("test"));
 
     }
@@ -38,7 +41,7 @@ public final class Parkour extends JavaPlugin {
         return mainInstance;
     }
 
-    public YamlConfiguration getCheckpointfile(){
+    public YamlConfiguration getCheckpointFile(){
         return checkpoints.getFinalFile();
     }
 
