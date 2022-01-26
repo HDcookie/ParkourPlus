@@ -8,32 +8,43 @@ import org.bukkit.configuration.file.YamlConfiguration;
 
 public class Utilities {
 
-    public static Location getLocation(String name, int checkpoint){
+    public static Location getLocation(String name, int checkpoint) {
         YamlConfiguration checks = Parkour.getMainInstance().getCheckpointFile();
-       String smth = "cources."+name +"."+checkpoint;
+        String smth = "cources." + name + "." + checkpoint;
 
-       double x = checks.getDouble(smth+".x");
-       double y = checks.getDouble(smth+".y");
-       double z = checks.getDouble(smth+".z");
+        double x = checks.getDouble(smth + ".x");
+        double y = checks.getDouble(smth + ".y");
+        double z = checks.getDouble(smth + ".z");
 
-       World world = Bukkit.getWorld(checks.getString(smth+".world"));
+        World world = Bukkit.getWorld(checks.getString(smth + ".world"));
 
 
         Location location = new Location(world, x, y, z);
         return location;
     }
 
-    public boolean atLocation(Location loc){
-        for(int i = (int) loc.getX(); i < loc.getX()+0.99; i++){
-            return true;
-        }
-        for(int i = (int) loc.getY(); i < loc.getY()+0.99; i++){
-            return true;
-        }
-        for(int i = (int) loc.getZ(); i < loc.getZ()+0.99; i++){
-            return true;
-        }
-        return false;
-    }
+    public static boolean atLocation(Location loc1, Location loc2) {
+        YamlConfiguration checks = Parkour.getMainInstance().getCheckpointFile();
 
+
+        boolean one = false;
+        boolean two = false;
+        boolean three = false;
+
+        if (loc1.getBlockX() == loc2.getBlockX()) {
+            one = true;
+        }
+        if (loc1.getBlockY() == loc2.getBlockY()) {
+            two = true;
+        }
+        if (loc1.getBlockZ() == loc2.getBlockZ()) {
+            three = true;
+        }
+
+        if (one && two && three) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
