@@ -17,7 +17,7 @@ public class Utilities {
        double z = checks.getDouble(smth+".z");
 
        World world = Bukkit.getWorld(checks.getString(smth+".world"));
-       System.out.println(checks.getString(smth+".world"));
+
 
         Location location = new Location(world, x, y, z);
         return location;

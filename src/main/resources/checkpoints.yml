@@ -3,21 +3,21 @@ cources:
   cource1:
     1:
       x: 1
-      y: 60
+      y: 70
       z: 1
       world: "world"
     2:
       x: 10
-      y: 60
+      y: 70
       z: 1
       world: "world"
     3:
       x: 20
-      y: 60
+      y: 70
       z: 1
       world: "world"
     4:
       x: 30
-      y: 60
+      y: 70
       z: 1
       world: "world"
